@@ -1,12 +1,12 @@
 import React, { Suspense, useState } from 'react'
 
-async function parseGroups() {
+async function GetGroupResponse() {
   const resp = await fetch('/api')
   const data = await resp.json()
   return data
 }
 
-const groups = await parseGroups()
+const groups = await GetGroupResponse()
 
 const groupStyle = {
   width: '2000px',
@@ -53,7 +53,6 @@ const OneGroup = ({group}) => {
                   })}</p>)
                 }
               })()}
-            
           </div>
         </div>
   )
